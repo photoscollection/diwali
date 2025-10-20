@@ -1,13 +1,9 @@
-Absolutely! Here's your *final Diwali greeting website*, split into three clean files: `index.html`, `style.css`, and `script.js`. This version includes:
-
-- 🎆 Random greeting messages
-- ✨ Sm
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Diwali 🎉</title>
+  <title>Happy Diwali 🎆</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,11 +11,17 @@ Absolutely! Here's your *final Diwali greeting website*, split into three clean 
   <div class="overlay"></div>
   <canvas id="canvas"></canvas>
 
-  <div class="card">
+  <div class="card" id="card">
     <input type="text" id="nameInput" placeholder="Type your name" />
     <h1 id="greeting" class="fade-message">শুভ দীপাবলি ✨</h1>
     <p id="message" class="fade-message">Wishing you and your loved ones a Diwali filled with light, laughter, and love.</p>
-    <button class="btn" onclick="copyGreeting()">Copy Greeting</button>
+    <button class="btn" onclick="copyGreeting()">📋 Copy Greeting</button>
+    <button class="btn" onclick="downloadCard()">📥 Download Greeting Card</button>
+
+    <div class="gift-section">
+      <button class="btn" onclick="showRandomGift()">🎁 Get a Gift for Diwali</button>
+      <div id="giftDisplay" class="gift-display"></div>
+    </div>
   </div>
 
   <button id="audioToggle">🔈 Mute</button>
@@ -27,6 +29,7 @@ Absolutely! Here's your *final Diwali greeting website*, split into three clean 
     <source src="https://cdn.pixabay.com/download/audio/2022/10/26/audio_3e2b7f5e6f.mp3?filename=indian-festive-ambient-123661.mp3" type="audio/mp3">
   </audio>
 
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
