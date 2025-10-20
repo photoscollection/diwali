@@ -1,4 +1,11 @@
-js
+
+```
+
+---
+
+### ⚙️ 3. `script.js`
+
+```js
 const nameInput = document.getElementById('nameInput');
 const greeting = document.getElementById('greeting');
 const message = document.getElementById('message');
@@ -43,6 +50,16 @@ function copyGreeting() {
   navigator.clipboard.writeText(text).then(() => alert("Greeting copied!"));
 }
 
+function downloadCard() {
+  const card = document.getElementById('card');
+  html2canvas(card).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'diwali-greeting.png';
+    link.href = canvas.toDataURL();
+    link.click();
+});
+}
+
 toggleBtn.addEventListener('click', () => {
   audio.muted =!audio.muted;
   toggleBtn.textContent = audio.muted? '🔇 Unmute': '🔈 Mute';
@@ -64,32 +81,8 @@ function createBurst(x, y) {
   for (let i = 0; i < 40; i++) {
     particles.push({
       x, y,
-      vx: (Math.random() - 0.5) * 4,
-      vy: (Math.random() - 0.5) * 4,
-      alpha: 1,
-      radius: 2 + Math.random() * 2,
-      color: `hsl(${Math.random() * 360}, 100%, 70%)`
-});
-}
-}
+      vx: (Math.random() - 0.5⁽¹⁾⁽²⁾
 
-canvas.addEventListener('click', e => createBurst(e.clientX, e.clientY));
-
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.alpha -= 0.02;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-    ctx.fillStyle = p.color;
-    ctx.globalAlpha = p.alpha;
-    ctx.fill();
-});
-  particles = particles.filter(p => p.alpha> 0);
-  ctx.globalAlpha = 1;
-  requestAnimationFrame(animate);
-}
-animate();
-```
+--------
+[1]  (https://github.com/kooks7/kooks7.github.io/tree/eeaef025be0a14390ef9fa7212bde6e9a95c5465/_posts%2F2020-06-23-%5BTypeScript%5D-TypeScript-%EA%B8%B0%EB%B3%B8-%ED%83%80%EC%9E%85.md)
+[2]  (https://github.com/lzh-yi/Web-Fork-/tree/024b3e55587afdf9f05a677613a75f24e3d1803e/03-CSS%E8%BF%9B%E9%98%B6%2F04-%E5%A6%82%E4%BD%95%E8%AE%A9%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%9F.md)
