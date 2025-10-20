@@ -1,5 +1,4 @@
-css
-:root {
+root {
   --bg: #0f0b2b;
   --accent: #ffb86b;
   --text: #fff;
@@ -18,7 +17,7 @@ body {
 .background {
   position: fixed;
   inset: 0;
-  background: url('https://github.com/photoscollection/diwali/blob/main/IMG-20251020-WA0097.jpg') center center / cover no-repeat;
+  background: url('your-image-url-here') center center / cover no-repeat;
   filter: brightness(0.5) blur(2px);
   z-index: -2;
 }
@@ -31,7 +30,8 @@ body {
 }
 
 .card {
-  position: absolute;
+  position: relative;
+  z-index: 2;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -73,6 +73,7 @@ input {
   font-weight: bold;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(255, 120, 60, 0.3);
+  margin: 8px;
 }
 
 .btn:hover {
@@ -109,6 +110,24 @@ input {
 .fade-message.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+.gift-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.gift-display img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255, 180, 100, 0.3);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95);}
+  to { opacity: 1; transform: scale(1);}
 }
 
 @media (max-width: 600px) {
