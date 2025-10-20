@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Diwali 🎉</title>
+  <style>
+:root {
+      --bg-color: #0f0b2b;
+      --accent: #ffb86b;
+      --text-color: #fff;
+      --glass: rgba(255,255,255,0.08);
+      --blur: 12px;
+      font-family: 'Segoe UI', sans-serif;
+}
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow: hidden;
+}
+
+.background {
+      position: fixed;
+      inset: 0;
+      background: url('your-image-url-here') center center / cover no-repeat;
+      filter: brightness(0.6) blur(2px);
+      z-index: -2;
+}
+
+.overlay {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255, 180, 100, 0.2), transparent 70%);
+      z-index: -1;
+}
+
+.card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--glass);
+      backdrop-filter: blur(var(--blur));
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(255, 180, 100, 0.2);
+      max-width: 600px;
+}
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: var(--accent);
+}
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+}
+
+.btn {
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #ffb86b, #ff6b6b);
+      border: none;
+      border-radius: 10px;
+      color: #2b0b00;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(255, 120, 60, 0.3);
+}
+
+.btn:hover {
+      opacity: 0.9;
+}
+
+    @media (max-width: 600px) {
+.card {
+        width: 90%;
+        padding: 20px;
+}
+
+      h1 {
+        font-size: 2em;
+}
+
+      p {
+        font-size: 1em;
+}
+}
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="overlay"></div>
+
+  <div class="card">
+    <h1>শুভ দীপাবলি ✨</h1>
+    <p>Wishing you and your loved ones a Diwali filled with light, laughter, and love.</p>
+    <button class="btn" onclick="copyMessage()">Copy Greeting</button>
+  </div>
+
+  <script>
+    function copyMessage() {
+      const message = "শুভ দীপাবলি! Wishing you joy, prosperity, and sparkling moments this festive season. 🪔✨";
+      navigator.clipboard.writeText(message).then(() => {
+        alert("Greeting copied to clipboard!");
+});
+}
+  </script>
+</body>
+</html>
